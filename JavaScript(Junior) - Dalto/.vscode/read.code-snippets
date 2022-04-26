@@ -1,0 +1,9 @@
+{
+	"read":{
+        "prefix":"read",
+        "body":[
+            "prompt()"
+        ],
+        "description": "Open console"
+    }
+}
