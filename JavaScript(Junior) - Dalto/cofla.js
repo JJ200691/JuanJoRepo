@@ -89,93 +89,150 @@
 y memoria RAM.
 - Además cada celular debe poder prender, apagar, reiniciar, tomar fotos y grabar.
 - Hacer todas estas implementaciones pero para celulares alta gama con otras funcionalidades */
-class Celular {
+// class Celular {
 
-    constructor(color, peso, resPan, resCam, ram) {
-        this.color = color;
-        this.peso = peso;
-        this.resPan = resPan;
-        this.resCam = resCam;
-        this.ram = ram;
+//     constructor(color, peso, resPan, resCam, ram) {
+//         this.color = color;
+//         this.peso = peso;
+//         this.resPan = resPan;
+//         this.resCam = resCam;
+//         this.ram = ram;
+//     }
+
+//     prender = () => "El celular se ha encendido";
+//     apagar = () => "El celular se ha apagado";
+//     reiniciar = () => "El celular se reiniciará";
+//     sacarFoto = () => "Se ha tomado una foto";
+//     grabar = () => "Se está grabando un video";
+
+//     elegirFunc = () => {
+//         alert("Qué función del celular desea realizar?\n1-Prender\n2-Apagar\n3-Reiniciar\n4-Tomar foto\n5-Grabar\n6-Salir")
+//         do {
+//             var res = prompt("Opcion: ");
+//             switch (res) {
+//                 case "1": alert(this.prender);
+//                     break;
+//                 case "2": alert(this.apagar);
+//                     break;
+//                 case "3": alert(this.reiniciar);
+//                     break;
+//                 case "4": alert(this.sacarFoto);
+//                     break;
+//                 case "5": alert(this.grabar);
+//                     break;
+//                 case "6": alert("Gracias")
+//                     break;
+//             }
+//         } while (res != "6");
+//     }
+
+//     mostrarInfo = () => {
+//         return `
+//                 Color: ${this.color}
+//                 Peso: ${this.peso}
+//                 Resolución de pantalla: ${this.resPan}
+//                 Resolución de cámara: ${this.resCam}
+//                 Memoria ram: ${this.ram}`
+//     }
+
+// }
+// const cel1 = new Celular("negro", "500gr", "32mp", "32mp", "2gb");
+// const cel2 = new Celular("gris", "550gr", "64mp", "32mp", "4gb");
+// const cel3 = new Celular("blanco", "650gr", "64mp", "64mp", "6gb");
+
+// alert("Bienvenido a la tienda de celulares!!!\nElija que celular desea ver:\n1-Samsung\n2-Motorolla\n3-Nokia\n4-Salir");
+
+// do {
+//     var resp = prompt("Ingrese opción");
+//     switch (resp) {
+//         case "1": alert(cel1.mostrarInfo());
+//             alert(cel1.elegirFunc());
+//             break;
+//         case "2": alert(cel2.mostrarInfo());
+//             alert(cel2.elegirFunc());
+//             break;
+//         case "3": alert(cel3.mostrarInfo());
+//             alert(cel3.elegirFunc());
+//             break;
+//         case "4": alert("Gracias");
+//             break;
+//     }
+// } while (resp != "4");
+
+// class CelAltaGama extends Celular {
+
+//     constructor(color, peso, resPan, resCam, ram, camLenta, recFacial) {
+//         this.camLenta = camLenta;
+//         this.recFacial = recFacial;
+//         super(color, peso, resPan, resCam, ram);
+//     }
+
+//     videoCamLenta = () => "Se está grabando un video en cámara lenta";
+//     reconocimientoFacial = () => "Se va a realizar un conocimiento facial";
+// }
+
+// const celu1 = new CelAltaGama("negro", "500gr", "64mp", "112mp", "8gb", "5fps", "activado");
+// celu1.mostrarInfo();
+/* Capitulo 4:
+- Perfeccionar calculadora parq que pueda calcular ademas potencias, raiz cuadrada y cúbica.
+- Crear una función que al pasarle como parámetro la materia nos devuelva el profesor asignado y el nombre de todos los alumnos.
+
+ */
+// function calculadora(op, n1, n2) {
+//     switch (op) {
+//         case "suma": alert(n1 + n2);
+//             break;
+//         case "resta": alert(n1 - n2);
+//             break;
+//         case "multiplicacion": alert(n1 * n2);
+//             break;
+//         case "division": alert(n1 / n2);
+//             break;
+//         case "potencia": alert(n1 ** n2);
+//             break;
+//         case "raiz cuadrada": alert(Math.sqrt(n1));
+//             break;
+//         case "raiz cubica": alert(Math.cbrt(n1));
+//             break;
+//     }
+// }
+// num1 = parseInt(prompt("Ingrese un número"));
+// num2 = parseInt(prompt("Ingrese otro número"));
+// operacion = prompt("Ingrese una operación");
+// calculadora(operacion, num1, num2);
+
+class Materia {
+
+    constructor(profesor, alumnos) {
+        this.profesor = profesor;
+        this.alumnos = [alumnos];
     }
 
-    prender = () => "El celular se ha encendido";
-    apagar = () => "El celular se ha apagado";
-    reiniciar = () => "El celular se reiniciará";
-    sacarFoto = () => "Se ha tomado una foto";
-    grabar = () => "Se está grabando un video";
-
-    elegirFunc = () => {
-        alert("Qué función del celular desea realizar?\n1-Prender\n2-Apagar\n3-Reiniciar\n4-Tomar foto\n5-Grabar\n6-Salir")
-        do {
-            var res = prompt("Opcion: ");
-            switch (res) {
-                case "1": alert(this.prender);
-                    break;
-                case "2": alert(this.apagar);
-                    break;
-                case "3": alert(this.reiniciar);
-                    break;
-                case "4": alert(this.sacarFoto);
-                    break;
-                case "5": alert(this.grabar);
-                    break;
-                case "6": alert("Gracias")
-                    break;
-            }
-        } while (res != "6");
+    get getProfesor() {
+        return this.profesor;
     }
 
-    mostrarInfo = () => {
-        return `
-                Color: ${this.color}
-                Peso: ${this.peso}
-                Resolución de pantalla: ${this.resPan}
-                Resolución de cámara: ${this.resCam}
-                Memoria ram: ${this.ram}`
+    get getAlumnos() {
+        return this.alumnos;
     }
-
 }
-const cel1 = new Celular("negro", "500gr", "32mp", "32mp", "2gb");
-const cel2 = new Celular("gris", "550gr", "64mp", "32mp", "4gb");
-const cel3 = new Celular("blanco", "650gr", "64mp", "64mp", "6gb");
+var matematicas = new Materia("Profesor: Ricardo Centurión", ["Pepito", "Cofla", "Maria"]);
+var lengua = new Materia("Profesor: Lopes Murphy", ["Pepito", "Cofla", "Maria", "Matias"]);
+var ingles = new Materia("Profesor: Susana Dora", ["Pepito", "Maria", "Diego"]);
+var fisica = new Materia("Profesor: Carlos Arzobispo", ["Pepito", "Cofla", "Diego"]);
+var ciencias = new Materia("Profesor: Marta Gomez", ["Pepito", "Diego", "Pablo"]);
+var musica = new Materia("Profesor: Martin Palermo", ["Pepito", "Cofla", "Maria", "Pablo"]);
 
-alert("Bienvenido a la tienda de celulares!!!\nElija que celular desea ver:\n1-Samsung\n2-Motorolla\n3-Nokia\n4-Salir");
-
-do {
-    var resp = prompt("Ingrese opción");
-    switch (resp) {
-        case "1": alert(cel1.mostrarInfo());
-            alert(cel1.elegirFunc());
-            break;
-        case "2": alert(cel2.mostrarInfo());
-            alert(cel2.elegirFunc());
-            break;
-        case "3": alert(cel3.mostrarInfo());
-            alert(cel3.elegirFunc());
-            break;
-        case "4": alert("Gracias");
-            break;
-    }
-} while (resp != "4");
-
-class CelAltaGama extends Celular {
-
-    constructor(color, peso, resPan, resCam, ram, camLenta, recFacial) {
-        this.camLenta = camLenta;
-        this.recFacial = recFacial;
-        super(color, peso, resPan, resCam, ram);
-    }
-
-    videoCamLenta = () => "Se está grabando un video en cámara lenta";
-    reconocimientoFacial = () => "Se va a realizar un conocimiento facial";
+function mostrarMateria(Materia) {
+    document.write(Materia.getProfesor + "<br>");
+    document.write("Alumnos inscriptos: " + Materia.getAlumnos + "<br>");
 }
-
-const celu1 = new CelAltaGama("negro", "500gr", "64mp", "112mp", "8gb", "5fps", "activado");
-celu1.mostrarInfo();
-
-
-
+document.write(mostrarMateria(matematicas));
+document.write(mostrarMateria(lengua));
+document.write(mostrarMateria(ingles));
+document.write(mostrarMateria(fisica));
+document.write(mostrarMateria(ciencias));
+document.write(mostrarMateria(musica));
 
 
 
