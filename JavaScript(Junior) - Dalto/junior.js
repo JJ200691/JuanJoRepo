@@ -230,7 +230,7 @@
 // document.write(metJoin + "<br>");
 // let metSlice = array.slice(0, 2);   //devuelve una copia de una porcion del array que se indique
 // document.write(metSlice + "<br>");
-// let metToString = array.toString(); //Al igual que toString en cadenas, convierte array en cadena de texto
+// let metToString = array.toString(); //al igual que toString en cadenas, convierte array en cadena de texto
 // let metIndexOf = array.indexOf("elemento1");    //devuelve el indice de el elemento indicado
 // let metIncludes = array.includes("elemento3");  //retorna un booleano si se encuentra o no el elemento indicado
 // De repetición

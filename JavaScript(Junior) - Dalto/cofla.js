@@ -176,7 +176,7 @@ y memoria RAM.
 /* Capitulo 4:
 - Perfeccionar calculadora parq que pueda calcular ademas potencias, raiz cuadrada y cúbica.
 - Crear una función que al pasarle como parámetro la materia nos devuelva el profesor asignado y el nombre de todos los alumnos.
-
+- Crear un método para inscribirse a una materia, si hay 20 alumnos inscriptos, negarle la inscripción, de lo contrario añadirlo.
  */
 // function calculadora(op, n1, n2) {
 //     switch (op) {
@@ -205,7 +205,7 @@ class Materia {
 
     constructor(profesor, alumnos) {
         this.profesor = profesor;
-        this.alumnos = [alumnos];
+        this.alumnos = alumnos;
     }
 
     get getProfesor() {
@@ -215,6 +215,10 @@ class Materia {
     get getAlumnos() {
         return this.alumnos;
     }
+
+    set setAlumnos(alumnos) {
+        this.alumnos = alumnos;
+    }
 }
 var matematicas = new Materia("Profesor: Ricardo Centurión", ["Pepito", "Cofla", "Maria"]);
 var lengua = new Materia("Profesor: Lopes Murphy", ["Pepito", "Cofla", "Maria", "Matias"]);
@@ -223,16 +227,26 @@ var fisica = new Materia("Profesor: Carlos Arzobispo", ["Pepito", "Cofla", "Dieg
 var ciencias = new Materia("Profesor: Marta Gomez", ["Pepito", "Diego", "Pablo"]);
 var musica = new Materia("Profesor: Martin Palermo", ["Pepito", "Cofla", "Maria", "Pablo"]);
 
-function mostrarMateria(Materia) {
+const mostrarMateria = (Materia) => {
     document.write(Materia.getProfesor + "<br>");
     document.write("Alumnos inscriptos: " + Materia.getAlumnos + "<br>");
 }
-document.write(mostrarMateria(matematicas));
-document.write(mostrarMateria(lengua));
-document.write(mostrarMateria(ingles));
-document.write(mostrarMateria(fisica));
-document.write(mostrarMateria(ciencias));
-document.write(mostrarMateria(musica));
+mostrarMateria(matematicas);
+mostrarMateria(lengua);
+mostrarMateria(ingles);
+mostrarMateria(fisica);
+mostrarMateria(ciencias);
+mostrarMateria(musica);
+
+function inscripción() {
+    let materia = {
+        fisica: [Juan, Diego, Carlos, Rodrigo, Fede, Pablo, Sergio, Sofia, Julieta],
+        lengua: [Juan, Diego, Carlos, Rodrigo, Fede, Pablo, Sergio, Sofia, Julieta],
+        quimica: [Juan, Diego, Carlos, Rodrigo, Fede, Pablo, Sergio, Sofia, Julieta],
+        musica: [Juan, Diego, Carlos, Rodrigo, Fede, Pablo, Sergio, Sofia, Julieta]
+    
+}
+
 
 
 
